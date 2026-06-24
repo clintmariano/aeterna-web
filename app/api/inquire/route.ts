@@ -85,9 +85,9 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      // From must be an address the authenticated Zoho account is allowed to
-      // send as (the mailbox or one of its aliases).
-      from: `"Aeterna Website" <${INQUIRE_EMAIL}>`,
+      // Send AS the authenticated mailbox (SMTP_USER) to avoid self-addressed
+      // mail and "send-as" restrictions; deliver TO the inquire alias.
+      from: `"Aeterna Website" <${user}>`,
       to: INQUIRE_EMAIL,
       replyTo: `"${name}" <${email}>`,
       subject: `New ${inquiryType.toLowerCase()} from ${name}`,
