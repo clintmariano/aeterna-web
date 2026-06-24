@@ -17,8 +17,10 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    // Honeypot: bots fill hidden fields; humans don't.
-    if (data.company) {
+    // Honeypot: bots fill hidden fields; humans don't. Field is named to avoid
+    // browser autofill (a "company"-named field gets autofilled and would
+    // wrongly trip this).
+    if (data.contact_time_pref) {
       setStatus("success");
       form.reset();
       return;
@@ -74,11 +76,17 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="rounded-2xl bg-white p-6 shadow-lg shadow-brand-900/10 sm:p-8"
     >
-      {/* Honeypot — visually hidden, off-screen, not announced */}
+      {/* Honeypot — visually hidden, off-screen, not announced. Named so that
+          browser autofill leaves it alone (real users never fill it). */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label>
-          Company
-          <input type="text" name="company" tabIndex={-1} autoComplete="off" />
+          Preferred contact time
+          <input
+            type="text"
+            name="contact_time_pref"
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </label>
       </div>
 

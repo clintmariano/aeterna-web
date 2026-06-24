@@ -14,7 +14,7 @@ type InquiryBody = {
   phone?: string;
   inquiryType?: string;
   message?: string;
-  company?: string; // honeypot
+  contact_time_pref?: string; // honeypot
 };
 
 function escapeHtml(value: string): string {
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
   }
 
   // Honeypot — silently accept and drop bot submissions.
-  if (body.company) {
+  if (body.contact_time_pref) {
     return NextResponse.json({ ok: true });
   }
 
