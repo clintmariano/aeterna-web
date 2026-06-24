@@ -1,0 +1,19 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="queue demo placeholder">
+  <rect width="1280" height="720" fill="#0f172a"/>
+  <rect x="0" y="0" width="1280" height="56" fill="#004D40"/>
+  <rect x="24" y="20" width="120" height="16" rx="8" fill="#5eead4"/>
+  <rect x="40" y="120" width="220" height="540" rx="12" fill="#115e59"/>
+  <rect x="64" y="152" width="160" height="12" rx="6" fill="#ffffff" opacity="0.85"/>
+  <rect x="64" y="200" width="140" height="10" rx="5" fill="#ffffff" opacity="0.45"/>
+  <rect x="64" y="236" width="150" height="10" rx="5" fill="#ffffff" opacity="0.45"/>
+  <rect x="64" y="272" width="120" height="10" rx="5" fill="#ffffff" opacity="0.45"/>
+  <rect x="300" y="120" width="940" height="540" rx="12" fill="#1e293b"/>
+  <rect x="328" y="152" width="300" height="20" rx="10" fill="#94a3b8"/>
+  <rect x="328" y="208" width="884" height="70" rx="10" fill="#334155"/>
+  <rect x="328" y="294" width="884" height="70" rx="10" fill="#334155"/>
+  <rect x="328" y="380" width="884" height="70" rx="10" fill="#334155"/>
+  <circle cx="640" cy="500" r="44" fill="#0d9488" opacity="0.25"/>
+  <path d="M626 478 L668 500 L626 522 Z" fill="#5eead4"/>
+  <text x="640" y="600" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#5eead4" font-weight="600">queue demo</text>
+  <text x="640" y="632" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">Video placeholder — full walkthrough coming soon</text>
+</svg>

@@ -1,0 +1,42 @@
+type LogoProps = {
+  /** Color of the hexagon mark fill */
+  variant?: "dark" | "light";
+  className?: string;
+  showWordmark?: boolean;
+};
+
+/**
+ * Aeterna brand mark — the hexagonal "A" / medical-cross glyph used in the app.
+ * `dark` renders the deep-teal backplate (for light backgrounds);
+ * `light` renders a white glyph (for teal/dark backgrounds).
+ */
+export default function Logo({
+  variant = "dark",
+  className = "",
+  showWordmark = true,
+}: LogoProps) {
+  const glyphBg = variant === "dark" ? "#004D40" : "transparent";
+  const glyphFill = "#ffffff";
+  const wordmarkColor = variant === "dark" ? "text-ink" : "text-white";
+
+  return (
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+      <svg
+        viewBox="0 0 512 512"
+        className="h-8 w-8 shrink-0 rounded-lg"
+        aria-hidden="true"
+      >
+        <rect width="512" height="512" rx="96" fill={glyphBg} />
+        <path
+          d="M237.103 78.0346C249.165 71.3218 263.835 71.3218 275.897 78.0346L276.478 78.3641L400.022 149.844C412.191 156.885 419.76 169.803 419.994 183.85L420 184.52V327.48C420 341.561 412.621 354.59 400.598 361.817L400.022 362.156L276.478 433.636C264.116 440.788 248.884 440.788 236.522 433.636L112.978 362.156C100.616 355.003 93.0001 341.785 93 327.48V184.52L93.0059 183.85C93.2395 169.803 100.809 156.885 112.978 149.844L236.522 78.3641L237.103 78.0346ZM276.478 157.899H236.522V113.04L158.989 157.899H158.607V158.12L127.962 175.851C124.871 177.639 122.967 180.944 122.967 184.52V236.98H158.607V277.021H122.967V327.48C122.967 331.056 124.871 334.36 127.962 336.149L158.607 353.879V354.101H158.99L236.522 398.958V354.101H276.478V398.958L354.01 354.101H354.393V353.879L385.038 336.149C388.129 334.36 390.033 331.056 390.033 327.48V277.021H354.393V236.98H390.033V184.52C390.033 180.944 388.129 177.639 385.038 175.851L354.393 158.12V157.899H354.011L276.478 113.04V157.899ZM276.478 197.94V236.98H314.437V277.021H276.478V314.059H236.522V277.021H198.563V236.98H236.522V197.94H276.478Z"
+          fill={glyphFill}
+        />
+      </svg>
+      {showWordmark && (
+        <span className={`text-xl font-semibold tracking-tight ${wordmarkColor}`}>
+          Aeterna
+        </span>
+      )}
+    </span>
+  );
+}

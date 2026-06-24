@@ -1,0 +1,120 @@
+<svg width="1100" height="800" viewBox="0 0 1100 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aeterna patient record screen preview">
+  <!-- app screen background -->
+  <rect width="1100" height="800" fill="#f8fafc"/>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="1100" height="30" fill="#0f172a"/>
+  <text x="20" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">1:29 PM · Fri Jun 19</text>
+  <text x="1010" y="20" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">53%</text>
+
+  <!-- header / search row -->
+  <rect x="0" y="30" width="1100" height="64" fill="#ffffff"/>
+  <line x1="0" y1="94" x2="1100" y2="94" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- hamburger -->
+  <rect x="28" y="55" width="22" height="2.5" rx="1.25" fill="#475569"/>
+  <rect x="28" y="62" width="22" height="2.5" rx="1.25" fill="#475569"/>
+  <rect x="28" y="69" width="22" height="2.5" rx="1.25" fill="#475569"/>
+  <!-- search -->
+  <rect x="78" y="46" width="420" height="32" rx="16" fill="#f1f5f9"/>
+  <circle cx="100" cy="62" r="6" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="104" y1="66" x2="109" y2="71" stroke="#94a3b8" stroke-width="2"/>
+  <text x="116" y="67" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Search patients...</text>
+  <!-- action buttons -->
+  <rect x="700" y="46" width="180" height="32" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="724" y="67" font-family="system-ui, sans-serif" font-size="12.5" fill="#334155">Schedule Appointment</text>
+  <rect x="892" y="46" width="120" height="32" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="916" y="67" font-family="system-ui, sans-serif" font-size="12.5" fill="#334155">Add Patient</text>
+  <circle cx="1044" cy="62" r="14" fill="#0d9488"/>
+
+  <!-- back to patients -->
+  <text x="28" y="128" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">← Back to Patients</text>
+
+  <!-- patient name block -->
+  <text x="60" y="172" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Mendoza, Carlos</text>
+  <text x="60" y="194" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Last updated: 06/22/2026</text>
+  <rect x="900" y="150" width="140" height="34" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="924" y="172" font-family="system-ui, sans-serif" font-size="12.5" fill="#334155">Print Full Record</text>
+
+  <!-- tabs -->
+  <text x="60" y="236" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0d9488">Patient Information</text>
+  <rect x="56" y="246" width="120" height="3" rx="1.5" fill="#0d9488"/>
+  <text x="200" y="236" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Immunization and Skin Test</text>
+  <text x="420" y="236" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Laboratory Test Results</text>
+  <text x="620" y="236" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">SOAP</text>
+  <text x="690" y="236" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Follow-Up Appointments</text>
+  <line x1="60" y1="262" x2="1040" y2="262" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="60" y="292" font-family="system-ui, sans-serif" font-size="11.5" fill="#94a3b8">Last modified by: doctor on 06/22/2026</text>
+
+  <!-- form card -->
+  <rect x="60" y="312" width="980" height="300" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+  <!-- avatar -->
+  <circle cx="130" cy="380" r="36" fill="#f1f5f9"/>
+  <circle cx="130" cy="368" r="13" fill="#cbd5e1"/>
+  <path d="M108 400 Q130 380 152 400 Z" fill="#cbd5e1"/>
+
+  <!-- field labels + inputs row 1 -->
+  <g font-family="system-ui, sans-serif">
+    <text x="210" y="345" font-size="11" fill="#64748b">Surname *</text>
+    <rect x="210" y="352" width="170" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="222" y="372" font-size="12" fill="#334155">Mendoza</text>
+
+    <text x="400" y="345" font-size="11" fill="#64748b">Given Name *</text>
+    <rect x="400" y="352" width="170" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="412" y="372" font-size="12" fill="#334155">Carlos</text>
+
+    <text x="590" y="345" font-size="11" fill="#64748b">Birth Date *</text>
+    <rect x="590" y="352" width="150" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="602" y="372" font-size="12" fill="#334155">08/22/1972</text>
+
+    <text x="760" y="345" font-size="11" fill="#64748b">Gender *</text>
+    <circle cx="768" cy="368" r="6" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <circle cx="768" cy="368" r="3" fill="#0d9488"/>
+    <text x="782" y="372" font-size="12" fill="#334155">Male</text>
+    <circle cx="838" cy="368" r="6" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="852" y="372" font-size="12" fill="#334155">Female</text>
+  </g>
+
+  <!-- row 2 -->
+  <g font-family="system-ui, sans-serif">
+    <text x="210" y="412" font-size="11" fill="#64748b">Address *</text>
+    <rect x="210" y="419" width="360" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="222" y="439" font-size="12" fill="#94a3b8">88 Rizal Avenue, Quezon City</text>
+
+    <text x="590" y="412" font-size="11" fill="#64748b">Contact Number *</text>
+    <rect x="590" y="419" width="380" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="602" y="439" font-size="12" fill="#94a3b8">0917 555 0188</text>
+  </g>
+
+  <!-- row 3 -->
+  <g font-family="system-ui, sans-serif">
+    <text x="210" y="479" font-size="11" fill="#64748b">Email Address</text>
+    <rect x="210" y="486" width="360" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="590" y="479" font-size="11" fill="#64748b">PhilHealth Identification Number</text>
+    <rect x="590" y="486" width="380" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  </g>
+
+  <!-- row 4 -->
+  <g font-family="system-ui, sans-serif">
+    <text x="210" y="546" font-size="11" fill="#64748b">Health Maintenance Organization (HMO)</text>
+    <rect x="210" y="553" width="360" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="222" y="573" font-size="12" fill="#334155">Select HMO</text>
+    <path d="M548 565 l6 6 6 -6" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+    <text x="590" y="546" font-size="11" fill="#64748b">HMO Identification Number</text>
+    <rect x="590" y="553" width="380" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  </g>
+
+  <!-- emergency contact -->
+  <text x="60" y="652" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Emergency Contact</text>
+  <g font-family="system-ui, sans-serif">
+    <text x="60" y="686" font-size="11" fill="#64748b">Name *</text>
+    <rect x="60" y="693" width="280" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="72" y="713" font-size="12" fill="#94a3b8">Anna Mendoza</text>
+    <text x="370" y="686" font-size="11" fill="#64748b">Relationship</text>
+    <rect x="370" y="693" width="280" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="382" y="713" font-size="12" fill="#94a3b8">Spouse</text>
+    <text x="680" y="686" font-size="11" fill="#64748b">Contact Number *</text>
+    <rect x="680" y="693" width="290" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="692" y="713" font-size="12" fill="#94a3b8">0918 555 0143</text>
+  </g>
+</svg>
