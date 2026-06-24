@@ -1,34 +1,32 @@
-import { ArrowRight } from "lucide-react";
 import Logo from "./Logo";
+import ContactForm from "./ContactForm";
 
 export default function Footer() {
   return (
     <>
-      {/* Contact / final CTA */}
+      {/* Contact / final CTA + inquiry form */}
       <section id="contact" className="bg-brand-700">
-        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-6 lg:py-20">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            See how Aeterna fits your clinic
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-50/90">
-            Tell us how your clinic runs today and we&apos;ll show you exactly how
-            Aeterna would work for your team — no obligation.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="mailto:hello@aeterna.health?subject=Aeterna%20Demo%20Request"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-base font-semibold text-brand-700 shadow-sm transition-colors hover:bg-brand-50"
-            >
-              Book a Demo
-              <ArrowRight size={18} />
-            </a>
-            <a
-              href="mailto:hello@aeterna.health"
-              className="inline-flex items-center justify-center rounded-lg border border-white/40 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Talk to Us
-            </a>
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-24">
+          <div className="lg:pt-4">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              See how Aeterna fits your clinic
+            </h2>
+            <p className="mt-4 max-w-md text-lg text-brand-50/90">
+              Tell us how your clinic runs today and we&apos;ll show you exactly
+              how Aeterna would work for your team — no obligation.
+            </p>
+            <p className="mt-6 text-sm text-brand-50/80">
+              Prefer email? Reach us at{" "}
+              <a
+                href="mailto:inquire@aeterna-ehr.com"
+                className="font-semibold text-white underline-offset-2 hover:underline"
+              >
+                inquire@aeterna-ehr.com
+              </a>
+            </p>
           </div>
+
+          <ContactForm />
         </div>
       </section>
 
@@ -63,7 +61,7 @@ export default function Footer() {
               <FooterCol
                 title="Get in touch"
                 links={[
-                  { label: "hello@aeterna.health", href: "mailto:hello@aeterna.health" },
+                  { label: "inquire@aeterna-ehr.com", href: "mailto:inquire@aeterna-ehr.com" },
                   { label: "Book a Demo", href: "#contact" },
                 ]}
               />
