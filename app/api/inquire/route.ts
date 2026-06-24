@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-// Where inquiries are delivered, and the verified sender domain address.
-const TO_EMAIL = "inquire@aeterna-ehr.com";
-const FROM_EMAIL = "Aeterna Website <noreply@aeterna-ehr.com>";
+// Inquiries are sent from and delivered to this address (a Zoho mailbox alias).
+const INQUIRE_EMAIL = "inquire@aeterna-ehr.com";
+
+// nodemailer needs the Node.js runtime (not the edge runtime).
+export const runtime = "nodejs";
 
 type InquiryBody = {
   name?: string;
@@ -48,7 +50,6 @@ export async function POST(request: Request) {
     );
   }
 
-  // Basic email sanity check.
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json(
       { error: "Please enter a valid email address." },
@@ -56,10 +57,15 @@ export async function POST(request: Request) {
     );
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    // Misconfiguration — log server-side, show a friendly message.
-    console.error("RESEND_API_KEY is not set; cannot send inquiry email.");
+  // Zoho SMTP credentials, supplied via Vercel environment variables.
+  // SMTP_USER  = the full Zoho mailbox login (e.g. clint.mariano@aeterna-ehr.com
+  //              or inquire@aeterna-ehr.com)
+  // SMTP_PASS  = a Zoho app-specific password (NOT the normal login password)
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
+  if (!user || !pass) {
+    console.error("SMTP_USER / SMTP_PASS are not set; cannot send inquiry.");
     return NextResponse.json(
       { error: "Email is not configured yet. Please try again later." },
       { status: 503 }
@@ -70,13 +76,20 @@ export async function POST(request: Request) {
   const phone = body.phone?.trim() || "—";
   const inquiryType = body.inquiryType?.trim() || "General inquiry";
 
-  const resend = new Resend(apiKey);
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.zoho.com",
+    port: Number(process.env.SMTP_PORT) || 465,
+    secure: true, // SSL on 465
+    auth: { user, pass },
+  });
 
   try {
-    const { error } = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: [TO_EMAIL],
-      replyTo: email,
+    await transporter.sendMail({
+      // From must be an address the authenticated Zoho account is allowed to
+      // send as (the mailbox or one of its aliases).
+      from: `"Aeterna Website" <${INQUIRE_EMAIL}>`,
+      to: INQUIRE_EMAIL,
+      replyTo: `"${name}" <${email}>`,
       subject: `New ${inquiryType.toLowerCase()} from ${name}`,
       text: [
         `Inquiry type: ${inquiryType}`,
@@ -114,20 +127,12 @@ export async function POST(request: Request) {
       `,
     });
 
-    if (error) {
-      console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "We couldn't send your message. Please try again." },
-        { status: 502 }
-      );
-    }
-
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Failed to send inquiry:", err);
+    console.error("Failed to send inquiry via SMTP:", err);
     return NextResponse.json(
       { error: "We couldn't send your message. Please try again." },
-      { status: 500 }
+      { status: 502 }
     );
   }
 }
